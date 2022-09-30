@@ -1,0 +1,80 @@
+function GENETIC-ALGORITHM(population,fitness) returns an individual 
+    repeat 
+        weights <— WEIGHTED-BY(population,fitness) 
+        population2 <- empty list 
+        for i = 1 to SIZE(population) do 
+            parent1, parent2 <— WEIGHTED-RANDOM-CHOICES(population, weights, 2) 
+            child <- REPRODuCE(parent, parent2) 
+            if (small random probability) then child <— MuTATE(child) 
+            add child to population2 
+        population <— population2 
+        until some individual is fit enough, or enough time has elapsed 
+        return the best individual in population, according to fitness 
+
+
+function REPRoDucE(parentl,parent2) returns an individual 
+    n <- LENGTH(parent I) c <— random number from 1 to n return APPEND(SUBSTRING(parent I ,l,c), SU BSTR I NG(parent2,c + 1,n)) 
+
+
+Functions to implement
+
+GENETIC ALGORITHM
+WEIGHTED BY
+WEIGHTED RANDOM CHOICES
+REPRODuCE
+MuTATE
+
+
+Graph data structure
+Population representation
+Fitness function
+
+
+Every member of a population is a n size array, whose each entry is 1,2 or 3
+
+There will be
+
+
+
+Gene - har vertex ka color
+chromosome - ek time pe poore graph ka color
+population - set of all chromosomes
+
+function scores = thefit(chromosome, Connect)
+    scores = zeros(size(cromosome,1),1);
+
+    for i = 1:size(Connect,1)
+        for j =1:ize(Connect,2)
+            if Connect(i,j)==1
+                if chromosome(i) != cromosome(j)
+                    scores = scores + 1;
+                end
+            end
+        end
+    end
+end
+
+
+1 Decides: 
+    Population Size: 
+    Maximum Generations: (maximum time in our case)
+    Number of Variables: 
+
+
+function chromosome = create(GenomeLength, FitnessFcn, options)
+    totalPop = sum(optinos.PopulationSize);
+    gene = 50;
+    chromosome = zeros(totalPop,gene);
+    for i = 1: totalPop 
+        for j=1: gene
+            chromosome(i,j) = randsrc(1,1,[1,2,3]);
+        end
+    end
+end
+
+
+crossoversinglepoint
+mutationuniform 
+
+
+
